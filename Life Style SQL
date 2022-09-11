@@ -3,4 +3,12 @@
 Welcome to Life Style planner 
 
 Daily to do 
+
+CREATE TABLE Daily-to-do (
+                           Number INTEGER PRIMARY KEY, 
+                           Name TEXT, 
+                           Minutes INTEGER, 
+                           Time INTEGER);
+
+
 Weekly to do 
