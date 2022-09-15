@@ -6,3 +6,67 @@ Movie stars: What movies are they in? Are they married to each other?
 Singers: What songs did they write? Where are they from?
 Authors: What books did they write?
 Fictional characters: How are they related to other characters? What books do they show up in?**/
+
+/* Create table about the people and what they do here */
+
+CREATE TABLE game_of_the_thrones(
+             id INTEGER PRIMARY KEY AUTOINCREMENT, 
+             character TEXT, 
+             family_name TEXT,
+            survived_the_game TEXT);
+INSERT INTO game_of_the_thrones VALUES (1, 'Eddard', 'Stark', 'no');
+INSERT INTO game_of_the_thrones VALUES (2, 'Catelyn', 'Stark', 'no');
+INSERT INTO game_of_the_thrones VALUES (3, 'Robb', 'Stark', 'no');
+INSERT INTO game_of_the_thrones VALUES (4, 'Benjen', 'Stark', 'no');
+INSERT INTO game_of_the_thrones VALUES (5, 'Rickon', 'Stark', 'no');
+INSERT INTO game_of_the_thrones VALUES (7, 'Sansa', 'Stark', 'yes');
+INSERT INTO game_of_the_thrones VALUES (8, 'Arya', 'Stark', 'yes');
+INSERT INTO game_of_the_thrones VALUES (6, 'John', 'Snow', 'yes');
+INSERT INTO game_of_the_thrones VALUES (9, 'Bran ', 'Stark', 'yes');
+INSERT INTO game_of_the_thrones VALUES (10, 'Tywin', 'Lannister', 'no');
+INSERT INTO game_of_the_thrones VALUES (11, 'Jaime', 'Lannister', 'no');
+INSERT INTO game_of_the_thrones VALUES (12, 'Cersei', 'Lannister', 'no');
+INSERT INTO game_of_the_thrones VALUES (13, 'Tyrion', 'Lannister', 'yes');
+INSERT INTO game_of_the_thrones VALUES (14, 'Joffrey', 'Lannister', 'no');
+INSERT INTO game_of_the_thrones VALUES (15, 'Marcella', 'Lannister', 'no');
+INSERT INTO game_of_the_thrones VALUES (16, 'Tommen', 'Lannister', 'no');
+INSERT INTO game_of_the_thrones VALUES (17, 'Daenerys', 'Targaryen', 'no');
+INSERT INTO game_of_the_thrones VALUES (18, 'Aegon', 'Targaryen', 'yes');
+INSERT INTO game_of_the_thrones VALUES (19, 'Areys I', 'Targaryen', 'no');
+INSERT INTO game_of_the_thrones VALUES (20, 'Robert', 'Baratheon', 'no');
+INSERT INTO game_of_the_thrones VALUES (21, 'Stannis', 'Baratheon', 'no');
+INSERT INTO game_of_the_thrones VALUES (22, 'Renly', 'Baratheon', 'no');
+INSERT INTO game_of_the_thrones VALUES (32, 'Gendry', 'Baratheon', 'yes');
+INSERT INTO game_of_the_thrones VALUES (23, 'Theon', 'Greyjoy', 'yes');
+INSERT INTO game_of_the_thrones VALUES (24, 'Yara', 'Greyjoy', 'no');
+INSERT INTO game_of_the_thrones VALUES (25, 'Balon', 'Greyjoy', 'no');
+INSERT INTO game_of_the_thrones VALUES (26, 'Euron', 'Greyjoy', 'no');
+INSERT INTO game_of_the_thrones VALUES (27, 'Doran', 'Martell', 'no');
+INSERT INTO game_of_the_thrones VALUES (28, 'Oberyn', 'Martell', 'no');
+INSERT INTO game_of_the_thrones VALUES (29, 'Elia', 'Martell', 'no');
+INSERT INTO game_of_the_thrones VALUES (30, 'Lyanna', 'Mormont', 'yes');
+INSERT INTO game_of_the_thrones VALUES (31, 'Jorah', 'Mormont', 'no');
+SELECT count (*) as characters FROM game_of_the_thrones;
+
+SELECT character as Dead FROM game_of_the_thrones
+WHERE survived_the_game = 'no';
+
+SELECT count (character) as Dead FROM game_of_the_thrones
+WHERE survived_the_game = 'no';
+
+SELECT character as Alive FROM game_of_the_thrones
+WHERE survived_the_game = 'yes';
+
+SELECT count (character) as Alive FROM game_of_the_thrones
+WHERE survived_the_game = 'yes';
+
+SELECT * FROM game_of_the_thrones WHERE survived_the_game = 'yes' AND family_name= 'Stark';
+
+SELECT * FROM game_of_the_thrones WHERE survived_the_game = 'yes' AND family_name= 'Lannister';
+
+SELECT * FROM game_of_the_thrones WHERE survived_the_game = 'yes' AND family_name= 'Baratheon';
+
+SELECT * FROM game_of_the_thrones WHERE survived_the_game = 'yes' AND family_name= 'Greyjoy';
+
+SELECT character FROM game_of_the_thrones
+WHERE character = 'John' AND family_name = 'snow' OR character = 'Aegon' and family_name = 'Targaryen' ; 
