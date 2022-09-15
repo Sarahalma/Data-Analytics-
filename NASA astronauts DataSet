@@ -381,3 +381,24 @@ INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,A
 INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,Alma_Mater,Undergraduate_Major,Graduate_Major,Military_Rank,Military_Branch,Space_Flights,Space_Flight_hr,Space_Walks,Space_Walks_hr,Missions,Death_Date,Death_Mission) VALUES ('George D. Zamka',1998,17,'Retired','6/29/1962','Jersey City, NJ','Male','US Naval Academy; Florida Institute of Technology','Mathematics','Engineering Management','Colonel','US Marine Corps (Retired)',2,692,0,0,'STS-120 (Discovery), STS-130 (Endeavor)',NULL,NULL);
 
 
+SELECT max(space_flights)
+FROM astronauts;
+SELECT max(space_flight_hr)
+FROM astronauts;
+SELECT max(missions)
+FROM astronauts;
+SELECT min(missions)
+FROM astronauts;
+SELECT avg(space_flight_hr)
+FROM astronauts;
+SELECT count(death_mission)
+FROM astronauts;
+SELECT count(space_walks)
+FROM astronauts;
+SELECT avg(space_walks_hr)
+FROM astronauts;
+SELECT name from astronauts
+where Undergraduate_Major = 'Mathematics';
+
+SELECT name from astronauts
+where Birth_Place = 'Seattle, WA' and (birth_date > 1960 or birth_date > 1980); 
