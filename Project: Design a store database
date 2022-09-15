@@ -1,0 +1,30 @@
+/** Clothing Store
+**/
+CREATE TABLE clothing_items( id INTEGER, name TEXT, price INTEGER, color TEXT, number INTEGER);
+INSERT INTO clothing_items VALUES(1, "shirt", 29, "red", 6);
+INSERT INTO clothing_items VALUES(2, "shirt", 29, "black", 3);
+INSERT INTO clothing_items VALUES(3, "pants", 59, "blue", 10);
+INSERT INTO clothing_items VALUES(4, "skirt", 49, "white", 7);
+INSERT INTO clothing_items VALUES(5, "tshirt", 39, "red", 6);
+INSERT INTO clothing_items VALUES(6, "skirt", 39, "red", 8);
+INSERT INTO clothing_items VALUES(7, "shorts", 19, "black", 10);
+INSERT INTO clothing_items VALUES(8, "shorts", 19, "blue", 12);
+INSERT INTO clothing_items VALUES(9, "blouse", 29, "white", 8);
+INSERT INTO clothing_items VALUES(10, "blouse", 49, "red", 22);
+INSERT INTO clothing_items VALUES(11, "dress", 59, "blue", 42);
+INSERT INTO clothing_items VALUES(12, "dress", 69, "red", 45);
+INSERT INTO clothing_items VALUES(13, "scarf", 9, "black", 34);
+INSERT INTO clothing_items VALUES(14, "scarf", 9, "red", 7);
+INSERT INTO clothing_items VALUES(15, "coat", 89, "white", 30);
+
+SELECT * FROM clothing_items order by number;
+
+SELECT sum(price) FROM clothing_items;
+
+SELECT SUM(number) FROM clothing_items;
+
+SELECT max(price) FROM clothing_items;
+
+SELECT min(price) FROM clothing_items; 
+
+SELECT * FROM clothing_items ORDER BY color;
