@@ -9,6 +9,8 @@ Fictional characters: How are they related to other characters? What books do th
 
 /* Create table about the people and what they do here */
 
+/* Create table about the people and what they do here */
+
 CREATE TABLE game_of_the_thrones(
              id INTEGER PRIMARY KEY AUTOINCREMENT, 
              character TEXT, 
@@ -46,6 +48,7 @@ INSERT INTO game_of_the_thrones VALUES (28, 'Oberyn', 'Martell', 'no');
 INSERT INTO game_of_the_thrones VALUES (29, 'Elia', 'Martell', 'no');
 INSERT INTO game_of_the_thrones VALUES (30, 'Lyanna', 'Mormont', 'yes');
 INSERT INTO game_of_the_thrones VALUES (31, 'Jorah', 'Mormont', 'no');
+INSERT INTO game_of_the_thrones VALUES (33, 'Shireen', 'Baratheon', 'no');
 SELECT count (*) as characters FROM game_of_the_thrones;
 
 SELECT character as Dead FROM game_of_the_thrones
@@ -69,4 +72,44 @@ SELECT * FROM game_of_the_thrones WHERE survived_the_game = 'yes' AND family_nam
 SELECT * FROM game_of_the_thrones WHERE survived_the_game = 'yes' AND family_name= 'Greyjoy';
 
 SELECT character FROM game_of_the_thrones
-WHERE character = 'John' AND family_name = 'snow' OR character = 'Aegon' and family_name = 'Targaryen' ; 
+WHERE character = 'John' AND family_name = 'snow' OR character = 'Aegon' and family_name = 'Targaryen'; 
+
+CREATE TABLE how_they_died (Id INTEGER, method TEXT);
+
+INSERT INTO how_they_died VALUES ( 1,'beheaded');
+INSERT INTO how_they_died VALUES ( 2,'killed');
+INSERT INTO how_they_died VALUES ( 3,'killed');
+INSERT INTO how_they_died VALUES ( 5,'killed');
+INSERT INTO how_they_died VALUES ( 10,'killed');
+INSERT INTO how_they_died VALUES ( 17,'killed');
+INSERT INTO how_they_died VALUES ( 20,'killed');
+INSERT INTO how_they_died VALUES ( 22,'killed');
+INSERT INTO how_they_died VALUES ( 25,'killed');
+INSERT INTO how_they_died VALUES ( 4,'died at battle');
+INSERT INTO how_they_died VALUES ( 21,'died at battle');
+INSERT INTO how_they_died VALUES ( 26,'died at battle');
+INSERT INTO how_they_died VALUES ( 31,'died at battle');
+INSERT INTO how_they_died VALUES ( 27,'died at battle');
+INSERT INTO how_they_died VALUES ( 28,'died at battle');
+INSERT INTO how_they_died VALUES ( 11,'burned to death');
+INSERT INTO how_they_died VALUES ( 12,'burned to death');
+INSERT INTO how_they_died VALUES (33,'burned to death');
+INSERT INTO how_they_died VALUES ( 14,'poisoned');
+INSERT INTO how_they_died VALUES ( 15,'poisoned');
+INSERT INTO how_they_died VALUES ( 29,'poisoned');
+INSERT INTO how_they_died VALUES ( 16,'sucide');
+
+SELECT * FROM game_of_the_thrones,how_they_died
+WHERE game_of_the_thrones.id = how_they_died.id;
+
+SELECT game_of_the_thrones.character,game_of_the_thrones.family_name, how_they_died.method 
+From game_of_the_thrones
+JOIN how_they_died
+ON game_of_the_thrones.id = how_they_died.id;
+
+SELECT game_of_the_thrones.character,game_of_the_thrones.family_name, how_they_died.method 
+From game_of_the_thrones
+LEFT OUTER JOIN how_they_died 
+ON game_of_the_thrones.id = how_they_died.id
+ORDER BY family_name;
+
