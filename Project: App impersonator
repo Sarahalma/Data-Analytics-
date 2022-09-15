@@ -4,3 +4,35 @@ CREATE a table to store the data.
 INSERT a few example rows in the table.
 Use an UPDATE to emulate what happens when you edit data in the app.
 Use a DELETE to emulate what happens when you delete data in the app.
+
+/* What does the app's SQL look like? */
+/* My Fitteness Pal*/
+
+Create Table diary (id INTEGER, 
+                   food TEXT, 
+                   calories INTEGER, 
+                   Excercise TEXT,
+                   Excercise_minutes INTEGER,
+                   calories_burned INTEGER);
+INSERT INTO diary VALUES (1, 'egg sandwitch', 230, 'walking',30, 100);
+INSERT INTO diary VALUES (2, 'fruit', 150, 'biking',20, 300);
+
+INSERT INTO diary VALUES (3, 'steak', 500, 'hiking',40, 400);
+
+INSERT INTO diary VALUES (4, 'beriany', 400, 'dancing',30, 150);
+
+INSERT INTO diary VALUES (5, 'mac and cheese', 370, 'walking',60, 200);
+
+INSERT INTO diary VALUES (6, 'fried chicken', 700, 'swimming',10, 300);
+
+INSERT INTO diary VALUES (7, 'pizza', 650, 'dancing',15, 100);
+SELECT * FROM diary;
+
+UPDATE diary SET Excercise = 'jumbing'
+WHERE id = 4;
+
+SELECT * FROM diary;
+
+DELETE FROM diary WHERE id = 7;
+
+SELECT * FROM diary;
